@@ -1,0 +1,24 @@
+// Syntax version
+syntax = "proto3";
+
+package endpoints.examples.sample;
+
+option java_multiple_files = true;
+option java_outer_classname = "SampleProto";
+option java_package = "com.google.endpoints.examples.sample";
+
+
+import "google/protobuf/empty.proto";
+// Service definition
+service EchoService {
+    rpc GetMessage (GetMessageRequest) returns (SampleMessage);
+}
+
+// Message types
+message SampleMessage {
+    string name = 1;
+}
+
+message GetMessageRequest {
+    string name = 1;
+}

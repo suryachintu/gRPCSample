@@ -1,0 +1,23 @@
+type: google.api.Service
+config_version: 1
+
+#
+# Name of the service configuration.
+#
+name: sample.endpoints.firm-buffer-250805.cloud.goog
+
+#
+# API title to appear in the user interface (Google Cloud Console).
+#
+title: Sample Echo gRPC API
+apis:
+- name: endpoints.examples.sample.EchoService
+
+#
+# API usage restrictions.
+#
+usage:
+  rules:
+  # ListShelves methods can be called without an API Key.
+  - selector: endpoints.examples.sample.EchoService.GetMessage
+    allow_unregistered_calls: true
